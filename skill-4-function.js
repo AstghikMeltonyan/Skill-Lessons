@@ -25,6 +25,34 @@ function cartTotal(cost, count, promotion = null) {
 console.log(cartTotal(20000, 2, 'СКИДКА15'));
 console.log(cartTotal(100, 15, 'ДАРИМ300'));
 
+// Recomended menthor
+function cartTotal_1(cost, count, promotion = null) {
+    let sum = cost;
+    if (promotion === 'ДАРИМ300') {
+        // this part menthor recomented to change
+        // if (sum < 300) {
+        //     sum = 0;
+        // } else {
+        //     sum -= 300;
+        // }
+        sum = sum < 300 ? 0 : sum - 300;
+    }
+
+    if (count >= 10) {
+        sum -= sum * (5 / 100);
+    }
+    if (sum > 50000) {
+        sum -= (sum - 50000) * (20 / 100);
+    }
+    if (promotion === 'СКИДКА15' && sum >= 20000) {
+        sum -= sum * (15 / 100);
+    }
+    return sum;
+}
+
+console.log(cartTotal_1(20000, 2, 'СКИДКА15'));
+console.log(cartTotal_1(100, 15, 'ДАРИМ300'));
+
 // Задание 2
 // Напишите функцию calculate() в cart-total.js, которая вычисляет и возвращает стоимость корзины товаров после применения всех скидок. В качестве аргументов функция принимает 3 параметра:
 // Общая сумма корзины
@@ -48,6 +76,14 @@ function getResponsibleUser(usersList, blackListUsers) {
 
 console.log(getResponsibleUser(['1', '2', '3', '4', '5'], ['3', '4']));
 console.log(getResponsibleUser(['1', '2', '3', '4', '5'], []));
+
+// Recomented menthor
+function getResponsibleUser_1(usersList, blackListUsers) {
+    return usersList.filter((el) => !blackListUsers.includes(el));
+}
+
+console.log(getResponsibleUser_1(['1', '2', '3', '4', '5'], ['3', '4']));
+console.log(getResponsibleUser_1(['1', '2', '3', '4', '5'], []));
 
 // 2 tarberak indexOf-ov
 function func(arr1, arr2) {

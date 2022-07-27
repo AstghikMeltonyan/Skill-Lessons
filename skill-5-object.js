@@ -1,51 +1,37 @@
-// Задание 1
-// Напишите функцию filter() в filter-black-list.js, которая создаёт массив email-адресов, 
-// не попавших в чёрный список. В качестве аргументов функция должна принимать: 
-// массив строк с исходными email адресами, массив строк с email адресами в чёрном списке.
-function cartTotal(cost, count, promotion = null) {
-  let sum = cost;
-  if (promotion === 'ДАРИМ300') {
-    if (sum < 300) {
-      sum = 0;
-    } else {
-      sum -= 300;
+// Задание
+// Напишите функцию filter в object-array-filter.js, фильтрующую массив объектов по значению свойства. Массив, название свойства и нужное значение должны передаваться в качестве аргументов. Пример использования:
+
+let objects = [
+ { name: 'Василий', surname: 'Васильев' },
+ { name: 'Иван', surname: 'Иванов' },
+ { name: 'Пётр', surname: 'Петров' }
+ ]
+ 
+
+//  let result = filter(objects, 'name', 'Иван');
+ 
+ /*
+ Результат выполнения должен быть:
+ [
+ { name: 'Иван', surname: 'Иванов' }
+ ]
+ */
+
+function filterObject(objects, name, value) {
+  let newObjects = [];
+  for (let obj of objects) {
+    if (obj[name] === value) {
+      newObjects.push(obj);
     }
   }
-  if (count >= 10) {
-    sum -= sum * (5 / 100);
-  }
-  if (sum > 50000) {
-    sum -= (sum - 50000) * (20 / 100);
-  }
-  if (promotion === 'СКИДКА15' && sum >= 20000) {
-    sum -= sum * (15 / 100);
-  }
-  return sum;
+  return newObjects;
 }
 
-cartTotal ();
+console.log(filterObject(objects, 'name', 'Иван'));
 
-// Задание 2
-// Напишите функцию calculate() в cart-total.js, которая вычисляет и возвращает стоимость корзины товаров после применения всех скидок. В качестве аргументов функция принимает 3 параметра:
-
-// Общая сумма корзины
-// Количество товаров в корзине
-// Промокод (по умолчанию null)
-// Правила и порядок (порядок важен!) начисления скидок:
-
-// Если промокод равен 'ДАРИМ300', то из суммы вычитается 300 рублей. При этом если сумма меньше 300 рублей, то итоговая стоимость будет 0.
-// При количестве товаров в корзине ≥10 применяется скидка 5% ко всей сумме
-// При сумме, превышающей 50 000, применяется скидка 20% к сумме превышения (то есть к разнице суммы корзины и 50 000)
-// Если промокод равен 'СКИДКА15', то ко всей сумме применяется скидка 15%, но только если сумма ≥20 000
-// Каждая следующая скидка должна проверяться и применяться к сумме после применения предыдущих скидок.
-
-function getResponsibleUser(usersList, blackListUsers) {
-  let responsibleUsers = [];
-  for (let user of usersList) {
-    if (blackListUsers.includes(user)) continue;
-    responsibleUsers.push(user);
-  }
-  return responsibleUsers;
+// Recomented menthor
+function filterObject_1 (objects, name, value) {
+  return objects.filter(obj=> obj[name] === value)
 }
 
-getResponsibleUser();
+console.log(filterObject_1(objects, 'name', 'Василий'));
