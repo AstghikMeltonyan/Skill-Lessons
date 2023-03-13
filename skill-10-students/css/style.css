@@ -1,0 +1,29 @@
+.table{
+  width: 100%;
+}
+.form_add label{
+  width: 99%;
+}
+.form_add label:nth-child(2n+1){
+  margin-right: 2%;
+}
+.form_sort{
+  display: flex;
+  justify-content: space-between;
+}
+.form_sort label{
+  width: 24%;
+}
+.span{
+  display: inline-block;
+}
+.btn_order{
+  cursor: pointer;
+}
+.button{
+  width: 30px;
+  height: 30px;
+  background-image: url('../arrow-down-up.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}

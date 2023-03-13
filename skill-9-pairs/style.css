@@ -1,0 +1,122 @@
+.container {
+  margin:  0 auto;
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 60px;
+  color: rgb(1, 1, 105);
+}
+
+.timer_text {
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 40px;
+  color: rgb(1, 1, 105);
+}
+
+.timer_container {
+  text-align: center;
+}
+
+.timer {
+  width: 30px;
+  height: 30px;
+  margin: 0 auto;
+  line-height: 30px;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 20px;
+  border: 2px solid rgb(1, 1, 105);
+  color: rgb(1, 1, 105);
+}
+
+.game {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  width: 120px;
+  height: 20vh;
+  font-size: 60px;
+  font-weight: bold;
+  border-radius: 20px;
+  color: transparent;
+  background: rgb(1, 1, 105);
+  transition: background .5s;
+  cursor: pointer;
+}
+
+.card.open {
+  background: rgb(156, 192, 209);
+  color: rgb(1, 1, 105);
+}
+
+.card.success {
+  background-color: rgb(87, 219, 137);
+  color: rgb(1, 58, 6);
+}
+
+.startArea {
+  display:  flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.btn {
+  padding: 20px 30px;
+  border-radius: 20px;
+  font-size: 20px;
+  color: rgb(1, 1, 105);
+  border: none;
+  background: rgb(187, 206, 214);
+  cursor: pointer;
+}
+
+.btn:hover {
+  box-shadow: .5rem -.5rem  1rem rgb(0,0,0,0.3);
+}
+
+.text {
+  width: 50%;
+  margin-right: 20px;
+  padding: 20px 30px;
+  border-radius: 20px;
+  font-size: 40px;
+  color: rgb(1, 1, 105);
+}
+
+.subtitle {
+  margin: 0;
+  margin-bottom: 20px;
+  color: rgb(1, 1, 105);
+}
+
+.input {
+  width: 30px;
+  height: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 20px;
+  text-align: center;
+  color: rgb(1, 1, 105);
+  border: 2px solid rgb(1, 1, 105);
+}
+
+
